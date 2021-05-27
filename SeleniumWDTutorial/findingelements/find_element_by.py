@@ -3,14 +3,14 @@ from selenium.webdriver.common.by import By
 
 class FindElementBy:
 
-    def test(self, base_url=None, el_by_id=None, el_by_xpath=None, el_by_linktext=None,  ):
+    def test(self, base_url=None, el_by_id=None, el_by_xpath=None, el_by_linktext=None):
         if base_url == None:
             exit(code="No Url Specified")
         driver = webdriver.Chrome()
         try:
             driver.get(base_url)
         except:
-            print("Url invalid or incorrectly entered!")
+            exit(code="Url invalid or incorrectly entered!")
         if el_by_id is not None:
             try:
                 i = driver.find_element(By.ID, el_by_id)
@@ -34,4 +34,4 @@ class FindElementBy:
                 print("An error occurred, check search value for Link Text")
 
 chrm = FindElementBy()
-chrm.test("https://www.proteanelectric.com/technology/", el_by_xpath="//*[@id='overview']/div/p[2]/a", el_by_linktext="View the Pd18 Data Sheet")
+chrm.test()

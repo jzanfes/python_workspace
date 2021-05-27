@@ -10,7 +10,7 @@ class FindByXpathCss:
         try:
             driver.get(base_url)
         except:
-            print("Url invalid or incorrectly entered!")
+            exit(code="Url invalid or incorrectly entered!")
         if el_xpath is not None:
             try:
                 i = driver.find_element_by_xpath(el_xpath)

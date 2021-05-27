@@ -9,7 +9,7 @@ class FindByIdClassTagName:
         try:
             driver.get(base_url)
         except:
-            print("Url invalid or incorrectly entered!")
+            exit(code="Url invalid or incorrectly entered!")
         if class_name is not None:
             try:
                 i = driver.find_element_by_class_name(class_name)
