@@ -27,5 +27,8 @@ class FindByXpathCss:
                 print("An error occurred check search value for Css Selector")
 
 
-x = FindByXpathCss()
-x.test("https://www.yahoo.com/", "//a[contains(text(),'Finance')]", "#ybar-navigation > div > ul > li:nth-child(4) > a")
+a = input("Type Url of website to be searched: ")
+b = input("Type Xpath of element to be searched for or hit enter: ")
+c = input("Type CSS of element to be searched for or hit enter: ")
+chrm = FindByXpathCss()
+chrm.test(a, b, c)
