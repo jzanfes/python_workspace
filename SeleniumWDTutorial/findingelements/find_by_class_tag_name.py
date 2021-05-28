@@ -26,5 +26,8 @@ class FindByIdClassTagName:
                 print("An error occurred check search value for Tag Name")
 
 
+a = input("Type Url of website to be searched: ")
+b = input("Type class name of element to be searched for or hit enter: ")
+c = input("Type tag name of element to be searched for or hit enter: ")
 chrm = FindByIdClassTagName()
-chrm.test("https://www.yahoo.com/", "")
+chrm.test(a, b, c)
