@@ -30,5 +30,6 @@ class FindByXpathCss:
 a = input("Type Url of website to be searched: ")
 b = input("Type Xpath of element to be searched for or hit enter: ")
 c = input("Type CSS of element to be searched for or hit enter: ")
+
 chrm = FindByXpathCss()
 chrm.test(a, b, c)
