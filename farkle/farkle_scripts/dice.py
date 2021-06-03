@@ -21,6 +21,8 @@ class Dice:
         die_select = True
         while die_select:
             try:
+                if die_pot == []:
+                    die_select = False
                 print(die_pot)
                 d = input("Please select the number of a die to keep or type Q to quit:")
                 if d.lower().strip() == "q":
@@ -34,22 +36,4 @@ class Dice:
                 print("Number not in list!!! Please try again.")
                 continue
         return die_held
-
-    def turn_scoring(held_die):
-        scoring_die = held_die
-        scoring_die.sort()
-        score_list = []
-        turn_score = 0
-        for score in score_list:
-            turn_score += score
-        return turn_score
-
-
-
-
-initial_roll = Dice.init_roll()
-print(initial_roll)
-
-
-
 
