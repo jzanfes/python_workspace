@@ -22,8 +22,12 @@ class Score:
         turn_score = 0
         if a == 6:
             turn_score += 1500
-        if a < 6 and b < 3 and z < 1:
+        if a != 6 and b != 3 and c != 2 and tally_list[0] != 4 and tally_list[0] != 5\
+                and tally_list[0] != 6 and tally_list[4] != 4 and tally_list[4] != 5\
+                and tally_list[4] != 6:
             turn_score += tally_list[0] * 100
+            turn_score += tally_list[4] * 50
+        if x == 1 and tally_list[4] > 0:
             turn_score += tally_list[4] * 50
         if b == 3:
             turn_score += 1500
@@ -47,10 +51,9 @@ class Score:
             turn_score += 3500
         return turn_score
 
-
-held_die = [3,3,3,3,3,1]
-print(held_die)
+held_die = [1,5,5]
+print(f'Die held for scoring: {held_die}')
 die_tally = Score.turn_die_tally(held_die)
-print(die_tally)
+print(f'Tallied die {die_tally}')
 round_score = Score.turn_score(die_tally)
-print(round_score)
+print(f'Score for the round: {round_score}')
