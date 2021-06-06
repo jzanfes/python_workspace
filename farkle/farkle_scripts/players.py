@@ -4,7 +4,7 @@ class PlayerMgmt:
         print('Please enter player names individually and then enter "q" when all players have been added.')
         player_entry = True
         while player_entry:
-            new_player = input('Player Name:').strip()
+            new_player = input('Player Name:').lower().strip()
             if new_player == 'q':
                 player_entry = False
             else:
