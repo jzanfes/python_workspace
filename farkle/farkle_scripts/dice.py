@@ -22,13 +22,12 @@ class Dice:
         while die_select:
             try:
                 if die_pot == []:
-                    die_select = False
+                    print('All dice have been held!')
+                    break
                 print(die_pot)
                 d = input("Please select the number of a die to keep or type Q to quit:")
                 if d.lower().strip() == "q":
-                    die_select = False
-                if die_held == []:
-                    die_select = False
+                    break
                 else:
                     die_pot.remove(int(d))
                     die_held.append(int(d))
@@ -37,3 +36,6 @@ class Dice:
                 continue
         return die_held
 
+x = Dice.init_roll()
+z = Dice.hold(x)
+print(z)
