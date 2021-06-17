@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="161f47a4-8303-436e-8221-f7db624a3d9b" name="Default Changelist" comment="new player list creation improve q function">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/farkle_scripts/dice.py" beforeDir="false" afterPath="$PROJECT_DIR$/farkle_scripts/dice.py" afterDir="false" />
-    </list>
+    <list default="true" id="161f47a4-8303-436e-8221-f7db624a3d9b" name="Default Changelist" comment="corrected dice" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -133,7 +130,7 @@
       <workItem from="1622944453032" duration="3377000" />
       <workItem from="1622994492628" duration="1214000" />
       <workItem from="1623007519198" duration="634000" />
-      <workItem from="1623967540307" duration="1412000" />
+      <workItem from="1623967540307" duration="1793000" />
     </task>
     <task id="LOCAL-00001" summary="creation of farkle initial">
       <created>1622664993378</created>
@@ -170,7 +167,14 @@
       <option name="project" value="LOCAL" />
       <updated>1622995693317</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="corrected dice">
+      <created>1623969141398</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1623969141398</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -193,7 +197,8 @@
     <MESSAGE value="farkle scoring and dice count" />
     <MESSAGE value="new player list creation" />
     <MESSAGE value="new player list creation improve q function" />
-    <option name="LAST_COMMIT_MESSAGE" value="new player list creation improve q function" />
+    <MESSAGE value="corrected dice" />
+    <option name="LAST_COMMIT_MESSAGE" value="corrected dice" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/farkle$score.coverage" NAME="score Coverage Results" MODIFIED="1622947808718" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/farkle_scripts" />
