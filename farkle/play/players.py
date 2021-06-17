@@ -1,3 +1,6 @@
+import random
+
+
 class PlayerMgmt:
     def players_new_game():
         players = []
@@ -6,12 +9,31 @@ class PlayerMgmt:
         while player_entry:
             new_player = input('Player Name:').lower().strip()
             if new_player == 'q':
-                player_entry = False
+                break
             else:
                 players.append(new_player.title().strip())
                 print(players)
         return tuple(players)
 
+    def lead_player(players):
+        player = random.choice(players)
+        print(f'The first player will be {player}!')
+        return(player)
 
-player_tuple = PlayerMgmt.players_new_game()
-print(player_tuple)
+    def player_rotation(players, last_player):
+        if players[-1] == last_player:
+            next_player = players[0]
+        else:
+            x = players.index(last_player)
+            next_player = players[x + 1]
+        return next_player
+
+
+
+
+players = PlayerMgmt.players_new_game()
+print(players)
+first_up = PlayerMgmt.lead_player(players)
+next_up = PlayerMgmt.player_rotation(players,first_up)
+print(next_up)
+
