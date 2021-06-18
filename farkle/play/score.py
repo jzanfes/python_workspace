@@ -1,6 +1,6 @@
 class Score:
 
-    def turn_die_tally(held_die):
+    def turn_score(held_die):
         scoring_die = held_die
         die_tally = []
         for i in range(1, 7):
@@ -9,37 +9,33 @@ class Score:
                 if die == i:
                     x += 1
             die_tally.append(x)
-        return die_tally
 
-    def turn_score(die_tally):
-        tally_list = die_tally
-        a = tally_list.count(1)
-        b = tally_list.count(2)
-        c = tally_list.count(3)
-        x = tally_list.count(4)
-        y = tally_list.count(5)
-        z = tally_list.count(6)
+        a = die_tally.count(1)
+        b = die_tally.count(2)
+        c = die_tally.count(3)
+        x = die_tally.count(4)
+        y = die_tally.count(5)
+        z = die_tally.count(6)
         turn_score = 0
         if a == 6:
             turn_score += 1500
-        if a != 6 and b != 3 and c != 2 and tally_list[0] != 4 and tally_list[0] != 5\
-                and tally_list[0] != 6 and tally_list[4] != 4 and tally_list[4] != 5\
-                and tally_list[4] != 6:
-            turn_score += tally_list[0] * 100
-            turn_score += tally_list[4] * 50
-        if x == 1 and tally_list[4] > 0:
-            turn_score += tally_list[4] * 50
+        if a != 6 and b != 3 and c != 2 and die_tally[0] != 4 and die_tally[0] != 5\
+                and die_tally[0] != 6:
+            turn_score += die_tally[0] * 100
+        if a != 6 and b != 3 and c != 2 and die_tally[4] != 4 and die_tally[4] != 5\
+                and die_tally[4] != 6:
+            turn_score += die_tally[4] * 50
         if b == 3:
             turn_score += 1500
-        if c == 1 and tally_list[0] == 3:
+        if c == 1 and die_tally[0] == 3:
             turn_score += 1000
-        if c == 1 and tally_list[0] != 3:
-            turn_score += 100 * (tally_list.index(3) + 1)
+        if c == 1 and die_tally[0] != 3:
+            turn_score += 100 * (die_tally.index(3) + 1)
         if c == 2:
             turn_score += 2500
-        if x == 1 and tally_list[0] != 4:
+        if x == 1 and die_tally[0] != 4:
             turn_score += 1000
-        if x == 1 and tally_list[0] == 4:
+        if x == 1 and die_tally[0] == 4:
             turn_score += 2000
         if y == 1 and a != 1 and b != 1:
             turn_score += 3000
@@ -51,9 +47,6 @@ class Score:
             turn_score += 3500
         return turn_score
 
-held_die = [1,5,5]
-print(f'Die held for scoring: {held_die}')
-die_tally = Score.turn_die_tally(held_die)
-print(f'Tallied die {die_tally}')
-round_score = Score.turn_score(die_tally)
-print(f'Score for the round: {round_score}')
+held_die = [4,4,4,4,1,1]
+turn_score = Score.turn_score(held_die)
+print(turn_score)
