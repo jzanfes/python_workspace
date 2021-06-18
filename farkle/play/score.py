@@ -47,6 +47,23 @@ class Score:
             turn_score += 3500
         return turn_score
 
-held_die = [4,4,4,4,1,1]
-turn_score = Score.turn_score(held_die)
-print(turn_score)
+    def create_scorecard(players):
+        score_card = {}
+        for player in players:
+            score_card.update({player : 0})
+        return score_card
+
+    def update_scorecard(player, score_card, turn_score):
+        x = score_card.get(player)
+        score_card.update({player: x + turn_score})
+        return score_card
+
+# held_die = [4,4,4,4,1,1]
+# turn_score = Score.turn_score(held_die)
+# print(turn_score)
+#
+# players = ['john','ben','paul','harry','sally','helen','becky','floyd','truman','ellen']
+# new_score_card = Score.create_scorecard(players)
+# print(new_score_card)
+# score_card = Score.update_scorecard('paul', new_score_card, turn_score)
+# print(score_card)
