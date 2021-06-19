@@ -9,9 +9,9 @@ class Dice:
             init_dice_roll.append(randint(1, 6))
         return init_dice_roll
 
-    def add_roll(x):
+    def add_roll(held):
         add_dice_roll = []
-        for r in range(0, x):
+        for r in range(0, 6-len(held)):
             add_dice_roll.append(randint(1, 6))
         return add_dice_roll
 
@@ -25,7 +25,7 @@ class Dice:
                     print('All dice have been held!')
                     break
                 print(die_pot)
-                d = input("Please select the number of a die to keep or type Q to quit:")
+                d = input("Please select the number of a die to keep or type Q to keep current score:")
                 if d.lower().strip() == "q":
                     break
                 else:
@@ -36,6 +36,7 @@ class Dice:
                 continue
         return die_held
 
-x = Dice.init_roll()
-z = Dice.hold(x)
-print(z)
+
+# x = Dice.init_roll()
+# z = Dice.hold(x)
+# print(z)

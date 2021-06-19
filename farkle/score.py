@@ -19,7 +19,7 @@ class Score:
         turn_score = 0
         if a == 6:
             turn_score += 1500
-        if a != 6 and b != 3 and c != 2 and die_tally[0] != 4 and die_tally[0] != 5\
+        if a != 6 and b != 3 and c != 2 and die_tally[0] != 3 and die_tally[0] != 4 and die_tally[0] != 5\
                 and die_tally[0] != 6:
             turn_score += die_tally[0] * 100
         if a != 6 and b != 3 and c != 2 and die_tally[4] != 4 and die_tally[4] != 5\
@@ -47,23 +47,24 @@ class Score:
             turn_score += 3500
         return turn_score
 
+
     def create_scorecard(players):
         score_card = {}
         for player in players:
             score_card.update({player : 0})
         return score_card
 
-    def update_scorecard(player, score_card, turn_score):
+    def update_scorecard(player, score_card, round_score):
         x = score_card.get(player)
-        score_card.update({player: x + turn_score})
+        score_card.update({player: x + round_score})
         return score_card
 
-# held_die = [4,4,4,4,1,1]
+# held_die = [1,1,1]
 # turn_score = Score.turn_score(held_die)
 # print(turn_score)
 #
 # players = ['john','ben','paul','harry','sally','helen','becky','floyd','truman','ellen']
 # new_score_card = Score.create_scorecard(players)
 # print(new_score_card)
-# score_card = Score.update_scorecard('paul', new_score_card, turn_score)
+# score_card = Score.update_scorecard('paul', new_score_card, round_score)
 # print(score_card)
