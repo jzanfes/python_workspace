@@ -59,7 +59,26 @@ class Score:
         score_card.update({player: x + round_score})
         return score_card
 
-# held_die = [1,1,1]
+    def all_dice_score_chk(roll):
+
+        for die in roll:
+            print(die)
+            x = roll.index(die)
+            orig = Score.turn_score(roll)
+            roll.remove(die)
+            test = Score.turn_score(roll)
+            roll.insert(x,die)
+            if orig == test:
+                chk = False
+                break
+            else:
+                chk = True
+        print(roll)
+        return chk
+
+#held_die = [1, 1]
+#die_check = Score.all_dice_score_chk(held_die)
+#print(die_check)
 # turn_score = Score.turn_score(held_die)
 # print(turn_score)
 #
