@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="161f47a4-8303-436e-8221-f7db624a3d9b" name="Default Changelist" comment="play package removed, and turn script started">
+    <list default="true" id="161f47a4-8303-436e-8221-f7db624a3d9b" name="Default Changelist" comment="added a check to see if all dice are contributing to score, and worked on turn script">
+      <change afterPath="$PROJECT_DIR$/input.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/score.py" beforeDir="false" afterPath="$PROJECT_DIR$/score.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/turn.py" beforeDir="false" afterPath="$PROJECT_DIR$/turn.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -53,8 +53,8 @@
       <recent name="C:\python_workspace\farkle" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.score">
-    <configuration name="players (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python.input">
+    <configuration name="input" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="farkle" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -62,12 +62,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/play" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/play/players.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/input.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -166,11 +166,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.score" />
+        <item itemvalue="Python.input" />
         <item itemvalue="Python.turn (1)" />
+        <item itemvalue="Python.score" />
         <item itemvalue="Python.turn" />
         <item itemvalue="Python.score (1)" />
-        <item itemvalue="Python.players (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -195,7 +195,8 @@
       <workItem from="1624120262872" duration="14689000" />
       <workItem from="1624234945209" duration="2667000" />
       <workItem from="1624242869091" duration="981000" />
-      <workItem from="1624586858388" duration="2632000" />
+      <workItem from="1624586858388" duration="2698000" />
+      <workItem from="1624648794620" duration="5400000" />
     </task>
     <task id="LOCAL-00001" summary="creation of farkle initial">
       <created>1622664993378</created>
@@ -274,7 +275,14 @@
       <option name="project" value="LOCAL" />
       <updated>1624107965293</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="added a check to see if all dice are contributing to score, and worked on turn script">
+      <created>1624589559861</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1624589559861</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -303,11 +311,13 @@
     <MESSAGE value="corrected scoring" />
     <MESSAGE value="added scorecard creation and score card update methods" />
     <MESSAGE value="play package removed, and turn script started" />
-    <option name="LAST_COMMIT_MESSAGE" value="play package removed, and turn script started" />
+    <MESSAGE value="added a check to see if all dice are contributing to score, and worked on turn script" />
+    <option name="LAST_COMMIT_MESSAGE" value="added a check to see if all dice are contributing to score, and worked on turn script" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/farkle$score.coverage" NAME="score Coverage Results" MODIFIED="1624589456411" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/farkle$turn__1_.coverage" NAME="turn (1) Coverage Results" MODIFIED="1624243795467" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/farkle$turn__1_.coverage" NAME="turn (1) Coverage Results" MODIFIED="1624651225110" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/farkle$input.coverage" NAME="input Coverage Results" MODIFIED="1624722827510" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/farkle$players__1_.coverage" NAME="players (1) Coverage Results" MODIFIED="1623973178778" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/play" />
     <SUITE FILE_PATH="coverage/farkle$players.coverage" NAME="players Coverage Results" MODIFIED="1623967959274" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/farkle_scripts" />
     <SUITE FILE_PATH="coverage/farkle$dice.coverage" NAME="dice Coverage Results" MODIFIED="1623969050771" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/farkle_scripts" />
