@@ -62,7 +62,6 @@ class Score:
     def all_dice_score_chk(roll):
 
         for die in roll:
-            print(die)
             x = roll.index(die)
             orig = Score.turn_score(roll)
             roll.remove(die)
@@ -73,7 +72,6 @@ class Score:
                 break
             else:
                 chk = True
-        print(roll)
         return chk
 
 #held_die = [1, 1]

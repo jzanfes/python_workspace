@@ -1,5 +1,6 @@
 from dice import Dice
 from score import Score
+import input
 
 scores_list = []
 turn = True
@@ -15,44 +16,25 @@ while turn:
         break
     elif Score.all_dice_score_chk(roll):
         scores_list.append(score)
-        entry_chk = True
-        while entry_chk:
-            y = input('All dice scored!!! Would you like to roll again y/n')
-            x = y.strip().lower()
-            if x == 'y' or x == 'n':
-                break
-            else:
-                continue
-
+        x = input.input_chk("All dice scored, would you like to roll again? y/n",'y','n')
+        if x == 'y':
+            continue
+        else:
+            Turn = False
 
     else:
         if z == 0:
-            entry_chk = True
-            while entry_chk:
-                x = input(f'Would you like to keep the {score}'
-                    f' points or hold dice and continue to roll? Keep/Roll:')
-                if x.strip().upper() == 'KEEP' or x.strip().upper() == 'ROLL':
-                    entry_chk = False
-                else:
-                    continue
-
+            x = input.input_chk(f'You have {score} points would you like to keep or roLL again Keep/Roll','keep','roll')
         else:
-            entry_chk = True
-            while entry_chk:
-                x = input(f'Wow your doing great! Keep the {sum(scores_list)} points and end turn,'
-                    f'or hold dice and continue to roll? Keep/Roll:')
-                if x.strip().upper() == 'KEEP' or x.strip().upper() == 'ROLL':
-                    entry_chk = False
-                else:
-                    continue
+            x = input.input_chk(f'Wow your doing great! Keep the {sum(scores_list)} points and end turn,'
+                    f'or hold dice and continue to roll? Keep/Roll:','keep','roll')
         roll_again = True
         while roll_again:
-            if x.strip().upper() == 'KEEP':
-                z = 1
+            if x == 'keep':
                 scores_list.append(score)
                 turn = False
                 break
-            if x.strip().upper() == 'ROLL':
+            if x == 'roll':
                 z = 1
                 rollin = True
                 while rollin:
@@ -80,7 +62,5 @@ while turn:
                 break
 
 print(sum(scores_list))
-
-
 
 
