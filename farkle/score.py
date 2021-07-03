@@ -22,7 +22,7 @@ class Score:
         if a != 6 and b != 3 and c != 2 and die_tally[0] != 3 and die_tally[0] != 4 and die_tally[0] != 5\
                 and die_tally[0] != 6:
             turn_score += die_tally[0] * 100
-        if a != 6 and b != 3 and c != 2 and die_tally[4] != 4 and die_tally[4] != 5\
+        if a != 6 and b != 3 and c != 2 and die_tally[4] != 3 and die_tally[4] != 4 and die_tally[4] != 5\
                 and die_tally[4] != 6:
             turn_score += die_tally[4] * 50
         if b == 3:
@@ -76,9 +76,9 @@ class Score:
                     chk = True
         return chk
 
-#held_die = [1, 1]
-#die_check = Score.all_dice_score_chk(held_die)
-#print(die_check)
+# held_die = [5,5,5,2,1,1]
+# #die_check = Score.all_dice_score_chk(held_die)
+# #print(die_check)
 # turn_score = Score.turn_score(held_die)
 # print(turn_score)
 #
