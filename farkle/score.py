@@ -60,18 +60,20 @@ class Score:
         return score_card
 
     def all_dice_score_chk(roll):
-
-        for die in roll:
-            x = roll.index(die)
-            orig = Score.turn_score(roll)
-            roll.remove(die)
-            test = Score.turn_score(roll)
-            roll.insert(x,die)
-            if orig == test:
-                chk = False
-                break
-            else:
-                chk = True
+        if roll == []:
+            chk = False
+        else:
+            for die in roll:
+                x = roll.index(die)
+                orig = Score.turn_score(roll)
+                roll.remove(die)
+                test = Score.turn_score(roll)
+                roll.insert(x,die)
+                if orig == test:
+                    chk = False
+                    break
+                else:
+                    chk = True
         return chk
 
 #held_die = [1, 1]

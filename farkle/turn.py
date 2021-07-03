@@ -21,7 +21,6 @@ while turn:
             continue
         else:
             Turn = False
-
     else:
         if z == 0:
             x = input.input_chk(f'You have {score} points would you like to keep or roLL again Keep/Roll','keep','roll')
@@ -34,32 +33,34 @@ while turn:
                 scores_list.append(score)
                 turn = False
                 break
-            if x == 'roll':
+            else:
                 z = 1
                 rollin = True
                 while rollin:
-                    y = len(roll)
                     held = Dice.hold(roll)
-                    x = len(held)
-                    if x == y:
-                        score = Score.turn_score(held)
-                        roll_again = False
-                        break
+                    scores_list.append(Score.turn_score(held))
+                    roll = Dice.add_roll(held)
+                    score = Score.turn_score(roll)
                     if score == 0:
                         print(f'{roll} is a farkle!')
                         scores_list = []
                         roll_again = False
                         turn = False
                         break
+                    if Score.all_dice_score_chk(roll):
+                        scores_list.append(Score.turn_score(roll))
+                        x = input.input_chk(f'All dice have scored keep {sum(scores_list)} or risk and roll again? Roll/Keep','roll','keep')
+                        if x == 'keep':
+                            roll_again = False
+                            turn = False
+                            break
+                        else:
+                            roll_again = False
+                            break
+
                     else:
-                        roll = Dice.add_roll(held)
-                        score = Score.turn_score(roll)
-                        held = Dice.hold(roll)
-                        score = Score.turn_score(held)
-                        scores_list.append(score)
                         continue
-            else:
-                break
+
 
 print(sum(scores_list))
 
