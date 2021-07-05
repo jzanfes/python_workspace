@@ -6,6 +6,10 @@ scores_list = []
 turn = True
 z = 0
 while turn:
+    if z == 0:
+        print('First Roll Here We GO!')
+    else:
+        print('Keep trucking! Rolled 6 new dice!')
     roll = Dice.init_roll()
     print(roll)
     score = Score.turn_score(roll)
@@ -20,10 +24,11 @@ while turn:
         if x == 'y':
             continue
         else:
-            Turn = False
+            turn = False
+            break
     else:
         if z == 0:
-            x = input.input_chk(f'You have {score} points would you like to keep or roLL again Keep/Roll','keep','roll')
+            x = input.input_chk(f'You have {score} points would you like to keep or roLL again? Keep/Roll','keep','roll')
         else:
             x = input.input_chk(f'Wow your doing great! Keep the {sum(scores_list)} points and end turn,'
                     f'or hold dice and continue to roll? Keep/Roll:','keep','roll')
@@ -35,12 +40,12 @@ while turn:
                 break
             else:
                 z = 1
+                held = Dice.hold(roll)
+                scores_list.append(Score.turn_score(held))
+                roll = Dice.add_roll(6,len(held))
+                score = Score.turn_score(roll)
                 rollin = True
                 while rollin:
-                    held = Dice.hold(roll)
-                    scores_list.append(Score.turn_score(held))
-                    roll = Dice.add_roll(held)
-                    score = Score.turn_score(roll)
                     if score == 0:
                         print(f'{roll} is a farkle!')
                         scores_list = []
@@ -59,6 +64,11 @@ while turn:
                             break
 
                     else:
+                        k = len(roll)
+                        held = Dice.hold(roll)
+                        scores_list.append(Score.turn_score(held))
+                        roll = Dice.add_roll(k, len(held))
+                        score = Score.turn_score(roll)
                         continue
 
 
