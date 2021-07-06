@@ -22,6 +22,7 @@ while turn:
         scores_list.append(score)
         x = input.input_chk("All dice scored, would you like to roll again? y/n",'y','n')
         if x == 'y':
+            z = 1
             continue
         else:
             turn = False

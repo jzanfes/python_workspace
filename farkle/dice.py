@@ -27,12 +27,14 @@ class Dice:
                         print('All dice have been held!')
                         break
                     print(die_pot)
-                    d = input("Please select the number of a die to keep or type Q to keep current held dice:")
-                    if d.lower().strip() == "q":
+                    d = input("Please select the number of a die to keep or type 'K' to keep current held dice:")
+                    if d.lower().strip() == "k":
                         die_select = False
                     else:
                         die_pot.remove(int(d))
+                        print(f'Die that may be held.   {die_pot}')
                         die_held.append(int(d))
+                        print(f'Current die being held. {die_held}')
                 except ValueError:
                     print("Number not in list!!! Please try again.")
                     continue
