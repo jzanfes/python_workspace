@@ -68,9 +68,16 @@ while turn:
                         k = len(roll)
                         held = Dice.hold(roll)
                         scores_list.append(Score.turn_score(held))
-                        roll = Dice.add_roll(k, len(held))
-                        score = Score.turn_score(roll)
-                        continue
+                        x = input.input_chk(f'You scored! Keep the {sum(scores_list)} points and end turn,'
+                                            f'or hold more dice and continue to roll? Keep/Roll:', 'keep', 'roll')
+                        if x == 'keep':
+                            roll_again = False
+                            turn = False
+                            break
+                        else:
+                            roll = Dice.add_roll(k, len(held))
+                            score = Score.turn_score(roll)
+                            continue
 
 
 print(sum(scores_list))

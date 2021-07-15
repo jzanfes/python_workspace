@@ -1,15 +1,13 @@
 class Score:
 
     def turn_score(held_die):
-        scoring_die = held_die
         die_tally = []
         for i in range(1, 7):
             x = 0
-            for die in scoring_die:
+            for die in held_die:
                 if die == i:
                     x += 1
             die_tally.append(x)
-
         a = die_tally.count(1)
         b = die_tally.count(2)
         c = die_tally.count(3)
@@ -37,11 +35,11 @@ class Score:
             turn_score += 1000
         if x == 1 and die_tally[0] == 4:
             turn_score += 2000
-        if y == 1 and a != 1 and b != 1:
+        if y == 1 and die_tally[0] != 1 and die_tally[4] != 1:
             turn_score += 3000
-        if y == 1 and a == 1:
+        if y == 1 and die_tally[0] == 1:
             turn_score += 3100
-        if y == 1 and b == 1:
+        if y == 1 and die_tally[4] == 1:
             turn_score += 3050
         if z == 1:
             turn_score += 3500
@@ -76,9 +74,9 @@ class Score:
                     chk = True
         return chk
 
-# held_die = [5,5,5,2,1,1]
-# #die_check = Score.all_dice_score_chk(held_die)
-# #print(die_check)
+# held_die = [4,4,4,4,4,6]
+# die_check = Score.all_dice_score_chk(held_die)
+# print(die_check)
 # turn_score = Score.turn_score(held_die)
 # print(turn_score)
 #

@@ -26,8 +26,8 @@ class Dice:
                     if die_pot == []:
                         print('All dice have been held!')
                         break
-                    print(die_pot)
-                    d = input("Please select the number of a die to keep or type 'K' to keep current held dice:")
+                    print(f'Dice that can be held {die_pot}')
+                    d = input("Please select the number of a die to Hold or type 'K' to keep current held dice:")
                     if d.lower().strip() == "k":
                         die_select = False
                     else:
