@@ -1,5 +1,5 @@
-from dice import Dice
-from score import Score
+import dice
+import score as sc
 import input
 
 scores_list = []
@@ -10,17 +10,17 @@ while turn:
         print('First Roll Here We GO!')
     else:
         print('Keep trucking! Rolled 6 new dice!')
-    roll = Dice.init_roll()
+    roll = dice.init_roll()
     print(roll)
-    score = Score.turn_score(roll)
+    score = sc.turn_score(roll)
     print(f'Roll score {score}!')
     if score == 0:
         print(f'{roll} Farkle!!')
         scores_list = []
         break
-    elif Score.all_dice_score_chk(roll):
+    elif sc.all_dice_score_chk(roll):
         scores_list.append(score)
-        x = input.input_chk("All dice scored, would you like to roll again? y/n",'y','n')
+        x = input.input_chk("All dice scored, would you like to roll again? y/n", 'y', 'n')
         if x == 'y':
             z = 1
             continue
@@ -29,10 +29,10 @@ while turn:
             break
     else:
         if z == 0:
-            x = input.input_chk(f'You have {score} points would you like to keep or roLL again? Keep/Roll','keep','roll')
+            x = input.input_chk(f'You have {score} points,Roll again? Keep/Roll', 'keep', 'roll')
         else:
             x = input.input_chk(f'Wow your doing great! Keep the {sum(scores_list)} points and end turn,'
-                    f'or hold dice and continue to roll? Keep/Roll:','keep','roll')
+                                f'or hold dice and continue to roll? Keep/Roll:', 'keep', 'roll')
         roll_again = True
         while roll_again:
             if x == 'keep':
@@ -41,10 +41,10 @@ while turn:
                 break
             else:
                 z = 1
-                held = Dice.hold(roll)
-                scores_list.append(Score.turn_score(held))
-                roll = Dice.add_roll(6,len(held))
-                score = Score.turn_score(roll)
+                held = dice.hold(roll)
+                scores_list.append(score.turn_score(held))
+                roll = dice.add_roll(6, len(held))
+                score = sc.turn_score(roll)
                 rollin = True
                 while rollin:
                     if score == 0:
@@ -53,9 +53,10 @@ while turn:
                         roll_again = False
                         turn = False
                         break
-                    if Score.all_dice_score_chk(roll):
-                        scores_list.append(Score.turn_score(roll))
-                        x = input.input_chk(f'All dice have scored keep {sum(scores_list)} or risk and roll again? Roll/Keep','roll','keep')
+                    if sc.all_dice_score_chk(roll):
+                        scores_list.append(sc.turn_score(roll))
+                        x = input.input_chk(f'All dice have scored keep {sum(scores_list)} '
+                                            f'or risk and roll again? Roll/Keep', 'roll', 'keep')
                         if x == 'keep':
                             roll_again = False
                             turn = False
@@ -66,8 +67,8 @@ while turn:
 
                     else:
                         k = len(roll)
-                        held = Dice.hold(roll)
-                        scores_list.append(Score.turn_score(held))
+                        held = dice.hold(roll)
+                        scores_list.append(sc.turn_score(held))
                         x = input.input_chk(f'You scored! Keep the {sum(scores_list)} points and end turn,'
                                             f'or hold more dice and continue to roll? Keep/Roll:', 'keep', 'roll')
                         if x == 'keep':
@@ -75,11 +76,9 @@ while turn:
                             turn = False
                             break
                         else:
-                            roll = Dice.add_roll(k, len(held))
-                            score = Score.turn_score(roll)
+                            roll = dice.add_roll(k, len(held))
+                            score = sc.turn_score(roll)
                             continue
 
 
 print(sum(scores_list))
-
-
