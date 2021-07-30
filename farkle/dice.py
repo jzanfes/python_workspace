@@ -1,11 +1,13 @@
 from random import randint
 import score
 
+
 def init_roll():
     init_dice_roll = []
     for r in range(0, 6):
         init_dice_roll.append(randint(1, 6))
     return init_dice_roll
+
 
 def add_roll(roll_num, held_num):
     add_dice_roll = []
@@ -13,9 +15,11 @@ def add_roll(roll_num, held_num):
         add_dice_roll.append(randint(1, 6))
     return add_dice_roll
 
+
 def hold(cur_roll_list):
     die_pot = cur_roll_list
     die_score = True
+    die_held = []
     while die_score:
         die_held = []
         die_select = True
@@ -44,9 +48,3 @@ def hold(cur_roll_list):
             continue
 
     return die_held
-
-# x = add_roll(4,1)
-# print(x)
-# x = Dice.init_roll()
-# z = Dice.hold(x)
-# print(z)

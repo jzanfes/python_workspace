@@ -42,7 +42,7 @@ while turn:
             else:
                 z = 1
                 held = dice.hold(roll)
-                scores_list.append(score.turn_score(held))
+                scores_list.append(sc.turn_score(held))
                 roll = dice.add_roll(6, len(held))
                 score = sc.turn_score(roll)
                 rollin = True
